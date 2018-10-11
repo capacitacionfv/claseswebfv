@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+}
+
+#board {
+    background: blue;
+}
+
+div#board div {
+    vertical-align: top;
+}
+
+div#board div.cuadro {
+    width: 35px; height:31px; border: 1px solid black;
+}

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Peliculas FV</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 27px;
+            font-weight: 700;
+            color: #606060;
+
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: 20% 1fr 25%;
+            grid-template-areas: "logo form user";
+            grid-gap: 30px;
+            box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+            font-family: 'Rubik', sans-serif;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+
+        }
+
+        .logo {
+            grid-area: "logo";
+            justify-content: center;
+            align-items: center;
+            padding: 20px 30px;
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 150px;
+            min-width: 80px;
+        }
+
+        .form {
+            display: flex;
+            grid-area: form;
+            align-items: center;
+
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px 5px;
+            border-radius: 10px;
+            border: 1px solid #a4a4a4;
+            box-sizing: border-box;
+        }
+
+
+        .user {
+            grid-area: user;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-weight: 700;
+            margin-right: 15px;
+
+        }
+
+        .user span {
+            margin: 0 15px;
+            color: #FE9E0C;
+        }
+
+        .user img {
+            max-width: 50px;
+            border: 2px solid #FE9E0C;
+        }
+
+        .user i {
+            color: #FE9E0C
+        }
+
+        .container-peliculas {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0 40px;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .peliculas h3 {
+            padding: 20px 40px 0;
+        }
+
+        .container-peliculas img {
+            width: 100%;
+            vertical-align: top;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.33);
+        }
+
+        .peliculas {
+            position: relative;
+        }
+
+
+        .peliculas figcaption {
+            background: rgba(0, 0, 0, .7);
+            position: absolute;
+            bottom: 0;
+            height: 50%;
+            align-items: center;
+            color: white;
+            text-align: left;
+            padding: 0 15px;
+        }
+
+        figcaption h4 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        figcaption p {
+            font-size: 0.8em;
+        }
+
+        .menu {
+            display: grid;
+            background-image: linear-gradient(to top, #FADF0A, #FE9E0C);
+            text-align: center;
+            justify-content: center;
+            grid-template-rows: repeat(4, 100px);
+            padding-top: 30px;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .menu a i {
+            font-size: 40px;
+            color: white;
+            transition: .3s;
+
+        }
+
+        .menu a i:hover {
+            color: darkgoldenrod;
+        }
+
+
+        .menu a,
+        .menu p {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+
+        }
+
+        @media screen and (max-width:768px) {
+            .container-peliculas {
+                display: grid;
+                grid-gap: 30px;
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+
+            .header {
+                display: grid;
+                grid-template-columns: 30% 1fr;
+                grid-template-rows: 2;
+                grid-template-areas: "logo  user" "form form";
+                grid-gap: 30px;
+                box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+                font-family: 'Rubik', sans-serif;
+
+            }
+
+            .form {
+                display: flex;
+                grid-area: form;
+                align-items: center;
+                padding: 0 20px;
+                margin-bottom: 40px;
+
+            }
+
+            .peliculas figcaption {
+                background: rgba(0, 0, 0, .7);
+                position: absolute;
+                bottom: 0;
+                height: 50%;
+                align-items: center;
+                color: white;
+                text-align: left;
+                padding: 0 15px;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 20% auto;
+
+            }
+
+            .menu a i {
+                font-size: 30px;
+                color: white;
+                transition: .3s;
+
+            }
+
+            .menu a i:hover {
+                color: darkgoldenrod;
+            }
+
+
+        }
+
+        @media screen and (max-width:480px) {
+
+            .menu a p {
+                display: none;
+            }
+            figcaption p {
+                font-size: 0.6em;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Peliculas">
+        </div>
+        <div class="form">
+            <form action="">
+                <input placeholder="Busca tu película, protagonista o director" type="text">
+            </form>
+        </div>
+        <div class="user">
+            <span>Luis Guzmán</span>
+            <img src="img/avatar.jpg" alt="">
+            <i class="material-icons"> keyboard_arrow_down </i>
+        </div>
+    </header>
+    <section class="container">
+        <nav class="menu">
+            <a href="">
+                <i class="material-icons">home</i>
+                <p>Home</p>
+            </a>
+            <a href="">
+                <i class="material-icons">trending_up</i>
+                <p>Trendings</p>
+            </a>
+            <a href="">
+                <i class="material-icons">thumb_up</i>
+                <p>likes</p>
+            </a>
+            <a href="">
+                <i class="material-icons">settings</i>
+                <p>Settings</p>
+            </a>
+
+        </nav>
+        <section class="peliculas">
+            <div class="ahora">
+                <h3>Ahora en el cine</h3>
+            </div>
+            <div class="container-peliculas">
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/shazam.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/deadpoolasustado.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/logan.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+            </div>
+            <div class="ahora">
+                <h3>Aclamadas por la crítica</h3>
+            </div>
+            <div class="container-peliculas">
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/black.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/doctor.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/thanos.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+            </div>
+            <div class="ahora">
+                <h3>No te debes perder</h3>
+            </div>
+            <div class="container-peliculas">
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/shazam.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/shazam.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+                <a class="peliculas">
+                    <figure>
+                        <img src="img/shazam.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <h4>Titulo</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, itaque quod culpa
+                            rerum
+                        </p>
+                    </figcaption>
+                </a>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
