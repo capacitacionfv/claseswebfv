@@ -6,54 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>&copy;MI PRIMER HTML</title>
-    
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">    
 </head>
 
 <body>
     <h1>Reg&iacute;strate Hoy!!</h1>
     <hr>
+    <div class="titulo2">Revise la siguiente informacion:</div>
     <!--h2>REGISTRAR INFORMACION</h2>
    <h3>REGISTRAR INFORMACION</h3>
    <h4>REGISTRAR INFORMACION</h4>
    <h5>REGISTRAR INFORMACION</h5>
    <h6>REGISTRAR INFORMACION</h6-->
-    <section>
-        <p>Lorem ipsum dolor sit amet <strong>adipisicing elit.</strong> Doloribus tenetur nulla commodi sed! Facere
-            porro,
-            magni amet voluptates sint, animi dolore quisquam deserunt doloribus aut molestiae. Maiores eius
-            consequatur
-            tempora?</p>
-        <p>Lorem, ipsum<span style="color:red;font-size: 1.5em"> dolor </span>sit amet consectetur adipisicing elit.
-            Provident sed nesciunt et vero quasi
-            officiis exercitationem, blanditiis quo, nihil repellendus harum dolorem commodi dignissimos incidunt
-            sapiente
-            alias modi deserunt laborum?
-            <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero, sed nemo cumque, facere
-            consequuntur
-            minus optio architecto neque corrupti doloremque dolore. Dolor sed vero illo quas exercitationem unde
-            ducimus.<br>
-            Cualquier consulta escribir un correo a <a href="mailto:webmaster@example.com" title="Correo administrador">ADMFV</a>
-        </p>
-    </section>
-    <figure>
-        <img src="resumenHTML-CS-JS.jpg" title="Resumen Imagen HTML" alt="Resumen Imagen HTML" height="300" />
-        <figcaption>Imagen 1.1</figcaption>
-    </figure>
-    <form>
+    <div class="parrafosuperior">
+        <section>
+            <p id="parrafo1">Lorem ipsum dolor sit amet <strong>adipisicing elit.</strong> Doloribus tenetur nulla
+                commodi sed!
+                Facere
+                porro,
+                magni amet voluptates sint, animi dolore quisquam deserunt doloribus aut molestiae. Maiores eius
+                consequatur
+                tempora?</p>
+            <p>Lorem, ipsum<span style="color:red;font-size: 1.5em"> dolor </span>sit amet consectetur adipisicing
+                elit.
+                Provident sed nesciunt et vero quasi
+                officiis exercitationem, blanditiis quo, nihil repellendus harum dolorem commodi dignissimos incidunt
+                sapiente
+                alias modi deserunt laborum?
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero, sed nemo cumque, facere
+                consequuntur
+                minus optio architecto neque corrupti doloremque dolore. Dolor sed vero illo quas exercitationem unde
+                ducimus.<br>
+                Cualquier consulta escribir un correo a <a href="mailto:webmaster@example.com" title="Correo administrador">ADMFV</a>
+            </p>
+        </section>
+    </div>
+    <div>
+        <figure>
+            <img src="img/resumenHTML-CS-JS.jpg" title="Resumen Imagen HTML" alt="Resumen Imagen HTML" height="300" />
+            <figcaption>Imagen 1.1</figcaption>
+        </figure>
+    </div>
+
+    <form id="frmLogin" action="" method="POST" onsubmit="validarForm();">
         <fieldset>
             <legend>Datos</legend>
             <div>
                 <label>Email:</label>
-                <input type="email" />
+                <input type="email" name="femail" id="femail" />
             </div>
             <div>
                 <label>Password:</label>
-                <input type="password" />
+                <input type="password" name="pwd" id="pwd"/>
             </div>
-            <button>Enviar</button>
+            <button id="btnEnviar" type="submit">Enviar</button>
+            <button id="btnCancelar" type="button">Cancelar</button>
         </fieldset>
     </form>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
