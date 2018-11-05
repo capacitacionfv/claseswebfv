@@ -11,7 +11,9 @@ package javaclasesobjetos;
  */
 public class Empleado extends Persona {
 
+    private String empresa;
     private double salarioPagado;
+    
 
     /**
      * @return the salarioPagado
@@ -25,6 +27,30 @@ public class Empleado extends Persona {
      */
     public void setSalarioPagado(double salarioPagado) {
         this.salarioPagado = salarioPagado;
+    }
+    
+    @Override
+    public void comer() {
+        System.out.println("El empleado " + nombre + " come");
+    }
+
+    @Override
+    public void moverse() {
+        System.out.println("El empleado " + nombre + " camina");
+    }
+
+    /**
+     * @return the empresa
+     */
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    /**
+     * @param empresa the empresa to set
+     */
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
 }

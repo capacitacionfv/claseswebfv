@@ -1,5 +1,7 @@
 package javaclasesobjetos;
 
+import implementacion.AccionesInterface;
+
 /*
  * ECTICSOFT - EC-ERP
  */
@@ -9,18 +11,17 @@ package javaclasesobjetos;
  * @since Nov 4, 2018 9:34:15 PM
  * @author Luis Guzman <lguzman@ecticsoft.com>
  */
-public class Persona {
+public class Persona implements AccionesInterface{
 
     public String nombre;
     public String apellido;
-    public int edad;
-    public final String EMPRESA = "FV";
+    public int edad;    
     public static String sexo;
     public String activo;
     
 
     public void imprimirPersona() {
-        System.out.println("Hola " + this.nombre + " " + this.apellido + " " + this.edad + " " + this.EMPRESA + " " + Persona.sexo + " " + this.activo);
+        System.out.println("Hola " + this.nombre + " " + this.apellido + " " + this.edad +  " " + Persona.sexo + " " + this.activo);
     }
 
     //constructor
@@ -60,6 +61,20 @@ public class Persona {
     public void setSalarioDeseado(double salarioDeseado) {
         this.salarioDeseado = salarioDeseado;
     }
-    
+
+    @Override
+    public void comer() {
+        System.out.println("La persona " + nombre + " come");
+    }
+
+    @Override
+    public void moverse() {
+        System.out.println("La persona " + nombre + " camina");
+    }
+
+    @Override
+    public String toString(){
+        return (nombre + " " + apellido + " " + edad + " " + activo);
+    }
     
 }

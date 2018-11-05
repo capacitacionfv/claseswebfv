@@ -35,7 +35,7 @@ public class JavaClasesObjetos {
         persona2.apellido = "Pedernal";
         persona2.nombre = "Ariana";
         persona2.edad = 43;
-        System.out.println("Hola " + persona2.nombre + " " + persona2.apellido + " " + persona2.edad + " " + persona.EMPRESA);
+        System.out.println("Hola " + persona2.nombre + " " + persona2.apellido + " " + persona2.edad +  persona2.activo);
         persona2.sexo = "MASCULINO";
         System.out.println(persona2.sexo);
         System.out.println(persona.sexo);
@@ -75,12 +75,23 @@ public class JavaClasesObjetos {
         ave.moverse();
 
         Animal animal = new Perro();
+        animal.setEdad(5);
         animal.comer();
         animal.moverse();
+        animal.calcularEdadHumana();
 
         Animal animal2 = new Ave();
+        animal2.setEdad(2);
         animal2.comer();
         animal2.moverse();
+        animal2.calcularEdadHumana();
+        
+        persona.moverse();
+        persona.comer();
+        
+        empleado.moverse();
+        empleado.comer();      
+       
 
     }
 
